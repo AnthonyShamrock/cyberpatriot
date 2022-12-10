@@ -1,4 +1,4 @@
-unction Parse-SecPol($CfgFile){ 
+Function Parse-SecPol($CfgFile){ 
     secedit /export /cfg "$CfgFile" | out-null
     $obj = New-Object psobject
     $index = 0
