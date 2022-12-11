@@ -2,4 +2,12 @@
 
 echo List users & admins
 
-start
+echo /p %i%="Continue test (y/n)"z
+
+if %i% ==y (
+echo START
+)
+
+if %i% ==n (
+echo cancel
+) 
