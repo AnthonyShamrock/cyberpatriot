@@ -2,7 +2,7 @@
 
 echo List users & admins
 
-echo /p %i%="Continue test (y/n)"
+set /p %i%="Continue test (y/n)"
 
 if %i% ==y (
 echo START
