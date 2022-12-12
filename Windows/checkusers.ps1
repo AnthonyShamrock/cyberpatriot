@@ -5,3 +5,6 @@ Clear-content "$get\users.txt"
 foreach($l in $accounts){
 	$l >> "$get\users.txt"
 }
+REM May need to add split path
+$getUsers = Get-content .\Userlist.txt
+
