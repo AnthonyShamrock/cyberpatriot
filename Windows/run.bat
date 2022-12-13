@@ -1,16 +1,23 @@
 @echo off
 
-echo List users & admins
+:SetSecPol
+REM GO TO SECPOL & USE SECEDIT
+pause
+
+:Menu
+
+echo 1 = Set Local User Policy
 
 :ConfirmBeforeStart
 set /p i="Did you complete the forensic (y/n)"
 
 if %i% ==y (
-echo START
+  :Menu
 )
 
 if %i% ==n (
-echo cancel
+  echo OPERATION CANCELLED!
+  exit
 ) 
 
 else (
