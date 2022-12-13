@@ -2,7 +2,8 @@
 
 echo List users & admins
 
-set /p %i%="Continue test (y/n)"
+:ConfirmBeforeStart
+set /p i="Did you complete the forensic (y/n)"
 
 if %i% ==y (
 echo START
@@ -11,3 +12,11 @@ echo START
 if %i% ==n (
 echo cancel
 ) 
+
+else (
+  echo Please try again, input must be lowercase!
+  :ConfirmBeforeStart
+)
+
+
+:ConfirmBeforeStart
