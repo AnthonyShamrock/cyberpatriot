@@ -9,8 +9,12 @@ NetSh Advfirewall set allprofiles state on
 
 
 :DisableRDP
+reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp" /v UserAuthentication /t REG_DWORD /d 0 /f
 reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server" /v fDenyTSConnections /t REG_DWORD /d 1 /f
 netsh advfirewall firewall set rule group="remote desktop" new enable=No
+netsh advfirewall firewall set service type = remotedesktop mode = disable
+powershell.exe -Command Set-Service -Name termService -StartupType Disabled -Status Stopped
+
 REM Disable Remote Desktop Services in Services.msc use powershell set-services
 
 
@@ -18,8 +22,10 @@ REM Disable Remote Desktop Services in Services.msc use powershell set-services
 net stop spoolers
 reg add "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Windows" /v LegacyDefaultPrinterMode /t REG_DWORD /d 1 /f
 powershell.exe -Command Set-Service -Name spooler -StartupType Disabled -Status Stopped
-gpudate /force
 pause 
+
+:DisableUSBPorts
+reg add "HHKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\USBSTOR" /v Start /t REG_DWORD /d 4 /f
 
 :Menu
 
