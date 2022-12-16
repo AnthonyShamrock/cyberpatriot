@@ -34,7 +34,7 @@ if %rpid%=enable (
   netsh advfirewall firewall set service type = remotedesktop mode = enable
   powershell.exe -Command Set-Service -Name termService -StartupType Manual -Status Running
 )
-goto:Menu
+goto Menu
 
 
 REM Disable Remote Desktop Services in Services.msc use powershell set-services
