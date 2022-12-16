@@ -16,8 +16,8 @@ netsh advfirewall firewall set rule group="remote desktop" new enable=No
 :DisablePrinters
 net stop spoolers
 reg add "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Windows" /v LegacyDefaultPrinterMode /t REG_DWORD /d 1 /f
+powershell.exe -Command Set-Service -Name spooler -StartupType Disabled -Status Stopped
 gpudate /force
-echo IMPORTANT Set "Turn off Windows default printer management" to enable" @ "User Configuration > Administrative Templates > Control Panel > Printers" on group policy (gpedit.msc)
 pause 
 
 :Menu
