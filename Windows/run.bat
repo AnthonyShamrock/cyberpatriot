@@ -27,7 +27,7 @@ if %rdpi%==disable (
   netsh advfirewall firewall set service type = remotedesktop mode = disable
   powershell.exe -Command Set-Service -Name termService -StartupType Disabled -Status Stopped
 )
-if%rpid%=enable (
+if %rpid%=enable (
   reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp" /v UserAuthentication /t REG_DWORD /d 1 /f
   reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server" /v fDenyTSConnections /t REG_DWORD /d 0 /f
   netsh advfirewall firewall set rule group="remote desktop" new enable=yes
