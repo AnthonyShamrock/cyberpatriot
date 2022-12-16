@@ -16,13 +16,17 @@ netsh advfirewall firewall set rule group="remote desktop" new enable=No
 :DisablePrinters
 net stop spoolers
 reg add "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Windows" /v LegacyDefaultPrinterMode /t REG_DWORD /d 1 /f
+gpudate /force
+echo IMPORTANT Set "Turn off Windows default printer management" to enable" @ "User Configuration > Administrative Templates > Control Panel > Printers" on group policy (gpedit.msc)
+pause 
 
 :Menu
 
 echo 1 = Set Local User Policy
-echo 2 = enable Firwall
+echo 2 = Enable Firwall
 echo 3 = Disable RDP (Remote Desktop)
 echo 4 = Disable Guest & Administrator
+echo 5 = Disable Printing Services
 
 
 
