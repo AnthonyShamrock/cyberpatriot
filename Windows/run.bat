@@ -79,6 +79,7 @@ reg add "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Windows"
 reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Print\Providers\LanMan Print Services\Servers" /v AddPrinterDrivers /t REG_DWORD /d 1 /f
 powershell.exe -Command Set-Service -Name spooler -StartupType Disabled -Status Stopped
 pause 
+goto Menu
 
 :DisableUSBPorts
 reg add "HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\USBSTOR" /v Start /t REG_DWORD /d 4 /f
@@ -98,11 +99,49 @@ reg add HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\WindowsUpdate /v
 
 echo 1 = Set Local User Policy
 echo 2 = Enable Firwall
-echo 3 = Disable RDP (Remote Desktop)
+echo 3 = RDP (Remote Desktop)
 echo 4 = Disable Guest & Administrator
 echo 5 = Disable Printing Services
+echo 6 = Disable USB
+echo 7 = Browswer Security
+echo 8 = Password Security
+echo 9 = Show Hidden
+set /p i="Select number"
 
+if %i%==1: (
+ :SetSecPol
+)
+if %i%==2: (
+ :EnableFireWall
+)
 
+if %i%==3: (
+ :RDP
+)
+
+if %i%==4: (
+ :Menu
+)
+
+if %i%==5: (
+ :DisablePrinters
+)
+
+if %i%==6: (
+ :DisableUSBPorts
+)
+
+if %i%==7: (
+ :WebSecurity
+)
+
+if %i%==8: (
+ :PasswordSecurity
+)
+
+if %i%==9: (
+ :ShowHidden
+)
 
 :ConfirmBeforeStart
 set /p i="Did you complete the forensic (y/n)"
@@ -120,6 +159,5 @@ else (
   echo Please try again, input must be lowercase!
   :ConfirmBeforeStart
 )
-
 
 :ConfirmBeforeStart
