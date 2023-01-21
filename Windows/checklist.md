@@ -1,22 +1,21 @@
 ## Window Updates Disabled?
-1) Go to `gpedit.msc` then
+### 1) `gpedit.msc`
 > Computer Configurations > Administrative Templates > Windows Components > Windows Update
 - Change `"Allow Configure Automatic Updates"` to `Not configured`
 
-2) Go to `regedit.msc` then 
+### 2) `regedit.msc` 
 > HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows 
 Check for folder named `"WindowsUpdate"` > `"AU"`
-Check for:
-- `"NoAutoUpdate"` if found change to `0`(You will need to restart computer)
-- `"AUOptions"` if found change to `3` (You will need to restart)
+- If found `"NoAutoUpdate"` change to `0` (You will need to restart computer)
+- If found `"AUOptions"` change to `3` (You will need to restart)
 
 
 ## Window Defender
-1) Go to `gpedit.msc` then
+### 1) `gpedit.msc`
 > Computer Configurations > Administrative Templates > Windows Components > Window Security > Account Protection
 - Change `"Hide the Account Protection Area"` to `disabled`
 > Computer Configurations > Administrative Templates > Windows Components > Window Security > Account Protection
- - Change `"Hide the Account Protection Area"` to  `disabled`
+- Change `"Hide the Account Protection Area"` to  `disabled`
 > Computer Configurations > Administrative Templates > Windows Components > Window Security > App and Browser Protection
 - Change `"Hide the App and broswer protection"` to  `disabled`
 > Computer Configurations > Administrative Templates > Windows Components > Window Security > Device performance and health
@@ -28,7 +27,7 @@ Check for:
 > Computer Configurations > Administrative Templates > Windows Components > Window Security > Virus and threat protection 
 - Change `"Hide the Virus and threat protection area"` to `disabled`
 
-2) Go to `regedit.msc` then 
+### 2) `regedit.msc`
 > HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender
 - Change `"DisableAntiSpyware"` to `0` (`1` == disabled)
 > Real-time protection
