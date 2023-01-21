@@ -1,34 +1,36 @@
-# gpedit.msc
+## Window Updates Disabled?
+1) Go to `gpedit.msc` then
+> Computer Configurations > Administrative Templates > Windows Components > Windows Update > Allow Configure Automatic Updates
+Change to Enabled
+
+2) Go to `regedit.msc` then 
+> HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows 
+Check for folder named `"WindowsUpdate"` > `"AU"`
+Check for:
+- `"NoAutoUpdate"` if found change to `0`(You will need to restart computer)
+- `"AUOptions"` if found change to `3` (You will need to restart)
+
 
 ## Window Defender
+1) Go to `gpedit.msc` then
+> Computer Configurations > Administrative Templates > Windows Components > Window Security
+Change following
+  - Account Protection > Hide the Account Protection Area to  `disabled`
+  - App and Browser Protection > Hide the App and broswer protection to  `disabled`
+  - Device performance and health > Hide the Device performance and health area to  `disabled`
+  - Device Security > Hide the Device security area to `disabled`
+  - Firewall and network protection > Hide the Firewall and network protection area to `disabled`
+  - Virus and threat protection > Hide the Virus and threat protection area to `disabled`
 
-### If options are hiddens in Windows Defender
- Go to Computer Configurations > Administrative Templates > Windows Components > Window Security
-  - Account Protection > Hide the Account Protection Area is  `disabled`
-  - App and Browser Protection > Hide the App and broswer protection is  `disabled`
-  - Device performance and health > Hide the Device performance and health area is  `disabled`
-  - Device Security > Hide the Device security area is  `disabled`
-  - Firewall and network protection > Hide the Firewall and network protection area is `disabled`
-  - Virus and threat protection > Hide the Virus and threat protection area `disabled`
-
-> Computer Configurations > Administrative Templates > Windows Components > Window Defender Antivirus 
-  - Make sure nothing is disabled
-> Computer Configurations > Administrative Templates > Windows Components > Window Defender Antivirus > Real-time protection
-  - Make sure nothing is disabled
-> Computer Configurations > Administrative Templates > Windows Components > Window Defender Antivirus > Scan
-  - Make sure nothing is disabled
-> Computer Configurations > Administrative Templates > Windows Components > Window Defender Antivirus > Threats
-  - Make sure nothing is disabled
+2) Go to `regedit.msc` then 
+> HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender
+- Change `"DisableAntiSpyware"` to `0` (`1` == disabled)
+> Real-time protection
+- Change `"DisableAntiSpyware"` to `0` (`1` == disabled)
 
 
-
-
-
-> Admin Template > Security Center 
- Make sure turn on Security Center is not disabled
-> Admin Template > Window Security
-  - check every folder and make sure nothing is disabled
-
+## Passwords 
+Go to `secpol.msc` then to Security Settings > Account Policies > 
 
 ## Disable rollback (to older windows)
 > Admin Template > Window Installer > Prohibit Rollback
