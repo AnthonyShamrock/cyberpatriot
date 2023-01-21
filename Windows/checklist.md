@@ -4,12 +4,12 @@
 
 ### If options are hiddens in Windows Defender
  Go to Computer Configurations > Administrative Templates > Windows Components > Window Security
-  > Account Protection > Hide the Account Protection Area is  `disabled`
-  > App and Browser Protection > Hide the App and broswer protection is  `disabled`
-  > Device performance and health > Hide the Device performance and health area is  `disabled`
-  > Device Security > Hide the Device security area is  `disabled`
-  > Firewall and network protection > Hide the Firewall and network protection area is `disabled`
-  > Virus and threat protection > Hide the Virus and threat protection area `disabled`
+  - Account Protection > Hide the Account Protection Area is  `disabled`
+  - App and Browser Protection > Hide the App and broswer protection is  `disabled`
+  - Device performance and health > Hide the Device performance and health area is  `disabled`
+  - Device Security > Hide the Device security area is  `disabled`
+  - Firewall and network protection > Hide the Firewall and network protection area is `disabled`
+  - Virus and threat protection > Hide the Virus and threat protection area `disabled`
 
 > Computer Configurations > Administrative Templates > Windows Components > Window Defender Antivirus 
   - Make sure nothing is disabled
