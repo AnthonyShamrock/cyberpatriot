@@ -4,8 +4,8 @@
 
 ### If options are hiddens in Windows Defender
 Go to: and make the options below match
-> Computer Configurations > Administrative Templates > Windows Components > Window Security
-  - Account Protection > Hide the Account Protection Area is  `disabled`
+  Computer Configurations > Administrative Templates > Windows Components > Window Security
+  > Account Protection > Hide the Account Protection Area is  `disabled`
   - App and Browser Protection > Hide the App and broswer protection is  `disabled`
   - Device performance and health > Hide the Device performance and health area is  `disabled`
   - Device Security > Hide the Device security area is  `disabled`
