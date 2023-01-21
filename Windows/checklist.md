@@ -1,7 +1,7 @@
 ## Window Updates Disabled?
 1) Go to `gpedit.msc` then
-> Computer Configurations > Administrative Templates > Windows Components > Windows Update > Allow Configure Automatic Updates
-Change to Enabled
+> Computer Configurations > Administrative Templates > Windows Components > Windows Update
+- Change `"Allow Configure Automatic Updates"` to `Not configured`
 
 2) Go to `regedit.msc` then 
 > HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows 
@@ -13,14 +13,20 @@ Check for:
 
 ## Window Defender
 1) Go to `gpedit.msc` then
-> Computer Configurations > Administrative Templates > Windows Components > Window Security
-Change following
-  - Account Protection > Hide the Account Protection Area to  `disabled`
-  - App and Browser Protection > Hide the App and broswer protection to  `disabled`
-  - Device performance and health > Hide the Device performance and health area to  `disabled`
-  - Device Security > Hide the Device security area to `disabled`
-  - Firewall and network protection > Hide the Firewall and network protection area to `disabled`
-  - Virus and threat protection > Hide the Virus and threat protection area to `disabled`
+> Computer Configurations > Administrative Templates > Windows Components > Window Security > Account Protection
+- Change `"Hide the Account Protection Area"` to `disabled`
+> Computer Configurations > Administrative Templates > Windows Components > Window Security > Account Protection
+ - Change `"Hide the Account Protection Area"` to  `disabled`
+> Computer Configurations > Administrative Templates > Windows Components > Window Security > App and Browser Protection
+- Change `"Hide the App and broswer protection"` to  `disabled`
+> Computer Configurations > Administrative Templates > Windows Components > Window Security > Device performance and health
+- Change `"Hide the Device performance and health area"` to  `disabled`
+> Computer Configurations > Administrative Templates > Windows Components > Window Security > Device Security 
+- Change `"Hide the Device security area"` to `disabled`
+> Computer Configurations > Administrative Templates > Windows Components > Window Security > Firewall and network protection
+- Change `"Hide the Firewall and network protection area"` to `disabled`
+> Computer Configurations > Administrative Templates > Windows Components > Window Security > Virus and threat protection 
+- Change `"Hide the Virus and threat protection area"` to `disabled`
 
 2) Go to `regedit.msc` then 
 > HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender
