@@ -37,18 +37,18 @@ Check for folder named `"WindowsUpdate"` > `"AU"`
 ## Passwords 
 Go to `secpol.msc` then to Security Settings > Account Policies >
 
->Minimum password length: 8 characters
+-Minimum password length: 8 characters
 
->Minimum password age: 5 days
->Maximum password age: 30-90 days
+-Minimum password age: 5 days
+-Maximum password age: 30-90 days
 
->Enforce password history: 5 passwords
->Passwords must meet complexity requirements? Yes
->Store password using reversible encryption for all users in the domain? Disable
+-Enforce password history: 5 passwords
+-Passwords must meet complexity requirements? Yes
+-Store password using reversible encryption for all users in the domain? Disable
 
->For Administrator account: Enforce password history: 9 passwords
->For Administrator account: Maximum password age: 14 days
->Number of times a password can be reused: 3 
+-For Administrator account: Enforce password history: 9 passwords
+-For Administrator account: Maximum password age: 14 days
+-Number of times a password can be reused: 3 
 
 ## Disable rollback (to older windows)
 > Admin Template > Window Installer > Prohibit Rollback
