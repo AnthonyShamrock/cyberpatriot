@@ -49,8 +49,7 @@ Store password using reversible encryption for all users in the domain? Disable
 
 For Administrator account: Enforce password history: 9 passwords
 For Administrator account: Maximum password age: 14 days
-Number of times a password can be reused: 3
- 
+Number of times a password can be reused: 3 
 
 ## Disable rollback (to older windows)
 > Admin Template > Window Installer > Prohibit Rollback
