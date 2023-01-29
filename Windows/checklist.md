@@ -44,6 +44,7 @@ Maximum password age: 30-90 days
 
 Enforce password history: 5 passwords
 Passwords must meet complexity requirements? Yes
+
 Store password using reversible encryption for all users in the domain? Disable
 
 
