@@ -53,8 +53,21 @@ Go to `secpol.msc` then to Security Settings > Account Policies >
 ## Disable rollback (to older windows)
 > Admin Template > Window Installer > Prohibit Rollback
  
- ## Disable Auto login
+## Auto login
+*Depends on readme.txt*
+
+### 1) `gpedit.msc`
  > Admin Template > Windows Logon Options
   - Disable "Sign-in and lock last interactive user after restart" (unless says otherwise)
   - Disable "Display information about previous logons during user logon"
-  - 
+ 
+###2) `regedit.msc`
+> HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon
+- Delete `DefaultUserName` (Right click on value and press delete)
+- Change `AutoAdminLogon` to `0` (`1` == enabled)
+- Delete `DefaultUserName` (Right click on value and press delete)
+*To add or re-enable, right click then press `New > String Value`, Value Name the title and Value data is information*
+
+###3) `netplwiz`
+*Press `Window key + R`, then type `"netplwiz"`*
+Select username and make sure `"Users must enter a user name and password to use this computer"` checked (uncheck == user automatically logs on)
