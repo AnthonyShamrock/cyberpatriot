@@ -1,5 +1,4 @@
 # cyberpatriot
 Cyberpatriot for Courthouse Tech Center
 
-`cmd.exe`
-cmd: tree
+`cmd.exe` tree (lists every file in a tree display)
